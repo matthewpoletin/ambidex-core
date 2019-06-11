@@ -4,10 +4,12 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+pytest = "*"
 
 [packages]
-tensorflow = "==1.7.0"
-numpy = "==1.14.2"
+tensorflow = "*"
+numpy = "*"
+flask = "*"
 
 [requires]
 python_version = "3.6"
