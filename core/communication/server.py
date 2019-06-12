@@ -2,7 +2,7 @@ from uuid import UUID
 
 from flask import Flask, jsonify, request, abort
 
-from core.model.design import Design
+from core.model import Design
 from core.model.process import custom_process
 from core.processing import storage, execution
 

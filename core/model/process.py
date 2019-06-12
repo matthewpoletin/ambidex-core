@@ -3,7 +3,7 @@ class Step:
     # def __init__(self, id, items):
 
 
-class Process:
+class SimulationProcess:
     """"""
     # self.steps =
 

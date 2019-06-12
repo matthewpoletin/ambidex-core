@@ -10,6 +10,7 @@ pytest = "*"
 tensorflow = "*"
 numpy = "*"
 flask = "*"
+scipy = "*"
 
 [requires]
 python_version = "3.6"

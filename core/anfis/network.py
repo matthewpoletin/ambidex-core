@@ -8,13 +8,10 @@ class AnfisNetwork:
 
     def __init__(self, n_inputs: int, n_rules: int, learning_rate: float = 1e-2):
         """
-        ?
+        Create brand new ANFIS neural network with tensorflow
 
-        :type n_inputs: int
         :param n_inputs:
-        :type n_rules: int
         :param n_rules:
-        :type learning_rate: float
         :param learning_rate:
         """
         self.n = n_inputs

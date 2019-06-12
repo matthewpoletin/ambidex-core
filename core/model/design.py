@@ -3,6 +3,7 @@ from uuid import UUID
 from flask import jsonify
 
 from core.anfis.network import AnfisNetwork
+from core.model.robot import RobotConfiguration
 
 
 class Design:
@@ -13,6 +14,7 @@ class Design:
         self.name = data['name']
         self.author = data['author']
         self.description = data['description']
+        self.robot = RobotConfiguration(data['items'])
         self.network = None
 
     def train(self):
