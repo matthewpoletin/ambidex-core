@@ -27,3 +27,14 @@ def get_design(design_id: UUID) -> Design:
     if design_id not in _designs:
         return None
     return _designs[design_id]
+
+
+def delete_design_id(design_id: UUID):
+    """
+    Delete design from storage
+
+    :param design_id: Id of design
+    :return:
+    """
+    if design_id in _designs:
+        del _designs[design_id]

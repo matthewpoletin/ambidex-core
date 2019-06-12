@@ -40,6 +40,25 @@ def get_design_id(design_id: str):
     return design.serialize()
 
 
+@app.route('/designs/<string:design_id>/locus', methods=['POST'])
+def get_locus_of_design_id(design_id):
+    """
+    Get locus of design by id
+
+    :param design_id: Id of design
+    :return:
+    """
+    existing_design = storage.get_design(UUID(design_id))
+    if existing_design is None:
+        abort(400)
+    result = execution.possible_positions(existing_design.robot, 40)
+    output = list(map(lambda x:
+                      {'position': {'x': x['position'][0], 'z': x['position'][1], 'y': x['position'][2]},
+                       'configuration': x['configuration']}
+                      , result))
+    return jsonify(output)
+
+
 @app.route('/designs/<string:design_id>/model', methods=['POST'])
 def model_design_id(design_id):
     """

@@ -14,7 +14,7 @@ class Design:
         self.name = data['name']
         self.author = data['author']
         self.description = data['description']
-        self.robot = RobotConfiguration(data['items'])
+        self.robot = RobotConfiguration.from_data(data['robotConfiguration']['items'])
         self.network = None
 
     def train(self):

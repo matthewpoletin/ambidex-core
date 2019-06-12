@@ -25,7 +25,7 @@ items_two_upwards = [
 ]
 
 
-def test_possible_positions_num_iter():
+def test_possible_positions_two_num_iter():
     # Arrange
     rc = RobotConfiguration.from_data(items_two_upwards)
     num_iter = 2
@@ -80,7 +80,6 @@ items_three_upward = [
         'type': 'Beam',
         'length': 1.0
     },
-
 ]
 
 
@@ -130,13 +129,13 @@ items_three = [
 ]
 
 
-def test_possible_positions_three():
+def test_possible_positions_three_num_iter():
     # Arrange
     rc = RobotConfiguration.from_data(items_three)
+    num_iter = 2
 
     # Act
-    result = possible_positions(rc, 2)
+    result = possible_positions(rc, num_iter)
 
     # Assert
-    assert np.array_equal(result[0], np.array([0.0, 0.0, 3.0]))
-
+    assert len(result) == pow(num_iter, 2)
